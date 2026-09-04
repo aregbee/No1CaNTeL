@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<addons>
+<addon id="repository.no1cantel"
+       name="No1CaNTeL Repository"
+       version="1.0.0"
+       provider-name="No1CaNTeL">
+  <extension point="xbmc.addon.repository"
+             name="No1CaNTeL Repository">
+    <dir>
+      <info compressed="false">https://aregbee.github.io/No1CaNTeL/addons.xml</info>
+      <checksum>https://aregbee.github.io/No1CaNTeL/addons.xml.md5</checksum>
+      <datadir>https://aregbee.github.io/No1CaNTeL/</datadir>
+      <hashes>false</hashes>
+    </dir>
+  </extension>
+
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">No1CaNTeL Kodi add-on repository</summary>
+    <description lang="en_GB">Repository for Kodi add-ons by No1CaNTeL.</description>
+    <platform>all</platform>
+    <license>MIT</license>
+  </extension>
+</addon>
+<addon id="service.vpn.manager"
+       name="Kodi VPN Manager"
+       version="0.1.1~beta15"
+       provider-name="No1CaNTeL">
+  <requires>
+    <import addon="xbmc.python" version="3.0.0"/>
+  </requires>
+
+  <extension point="xbmc.python.script" library="manager.py">
+    <provides>executable</provides>
+  </extension>
+
+  <extension point="xbmc.service" library="service.py"/>
+
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Monitors and manages VPN connectivity in Kodi</summary>
+    <description lang="en_GB">Provides VPN status, verification and platform-specific VPN management for Kodi.</description>
+    <platform>all</platform>
+    <license>MIT</license>
+  </extension>
+</addon>
+</addons>
