@@ -1,5 +1,30 @@
 # Kodi VPN Manager Changelog
 
+## 0.1.1~beta18 - 2026-09-11
+
+### Added
+- Manual OpenVPN profile creation with server, port, and UDP/TCP selection.
+- OpenVPN profile import into VPN Manager-managed storage.
+- Server syntax and DNS-resolution validation for manually added profiles.
+- Profile editing and managed profile deletion.
+- Username/password credential management for OpenVPN profiles.
+- Password confirmation when setting or changing credentials.
+- Protected runtime credential injection into the effective OpenVPN configuration.
+- Automatic cleanup of runtime credential files and effective OpenVPN configuration when the managed tunnel stops.
+- Packaged CoreELEC DNS-lock component with transactional migration support.
+
+### Changed
+- Profile selection now responds correctly to Kodi Select/Enter actions.
+- Managed profile deletion now removes unreferenced authentication records and secrets.
+- Credential secrets are stored separately from profile metadata with restrictive file permissions.
+- CoreELEC migration now validates, backs up, installs, and rolls back the DNS-lock component.
+
+### Security
+- OpenVPN passwords are not stored in profiles.json or embedded in generated .ovpn files.
+- Runtime authentication files are created with mode 0600 in a mode 0700 runtime directory and removed after tunnel shutdown.
+- Credential-aware deletion avoids leaving orphaned VPN secrets.
+
+
 ## 0.1.1~beta17 - 2026-09-10
 
 ### Added
