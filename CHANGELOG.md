@@ -1,5 +1,32 @@
 # Kodi VPN Manager Changelog
 
+## 0.1.1~beta19 - 2026-09-13
+
+### Added
+- Provider-level OpenVPN credential inheritance with optional per-profile overrides.
+- Country-grouped profile browsing with remembered country selection and back navigation.
+- Optional CPU, GPU, DDR-temperature, and RAM dashboard metrics.
+- CoreELEC/OpenVFD VPN-state indication using the SETUP icon and clock flashing.
+- Deliberate VPN-protection disabled mode with automatic reconnect suppression.
+- Single VPN protection on/off control with fail-closed re-entry.
+- Debug setting for temporary full-IP logging.
+- Default IP-address redaction in Kodi VPN Manager logs.
+- Restricted NTP bootstrap support for stale-clock recovery before OpenVPN TLS validation.
+
+### Changed
+- PureVPN profiles now inherit service-level credentials by default.
+- Protection-state transitions distinguish deliberate unprotected mode from fail-closed recovery.
+- Profile browser now separates country navigation from individual VPN profiles.
+- VPN logging now preserves only the first IPv4 octet by default and redacts IPv6 addresses.
+- Full-IP diagnostic logging automatically resets off on service and dashboard lifecycle boundaries.
+
+### Fixed
+- OpenVPN launcher handling of empty authentication IDs.
+- Duplicate profile activation caused by overlapping Kodi click/action events.
+- VPN reconnect failure when a deliberately disabled session was re-enabled without first restoring fail-closed protection.
+- Stale system clocks preventing OpenVPN certificate validation while fail-closed rules blocked time synchronization.
+- CoreELEC bootstrap protection now permits only narrowly scoped NTP traffic required to establish a sane clock.
+
 ## 0.1.1~beta18 - 2026-09-11
 
 ### Added
